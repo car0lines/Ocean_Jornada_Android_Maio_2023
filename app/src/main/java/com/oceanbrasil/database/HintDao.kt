@@ -7,11 +7,9 @@ import com.oceanbrasil.Hint
 
 @Dao
 interface HintDao {
-    new *
     @Insert
-    fun insert (hint: HintEntily)
+    fun insert(hint: HintEntily)
 
-    new*
     @Query("SELECT * FROM hints")
-    fun findAll()
+    fun findAll(): List<HintEntily>
 }

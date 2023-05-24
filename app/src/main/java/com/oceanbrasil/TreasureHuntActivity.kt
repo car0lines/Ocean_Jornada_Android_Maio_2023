@@ -40,15 +40,12 @@ class TreasureHuntActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         binding.fab.setOnClickListener {
-            val hintsListIntent = Intent(this, HintListActivity: class.java)
+            val hintsListIntent = Intent(this, HintListActivity::class.java)
             startActivity(hintsListIntent)
+        }
     }
 
-        fun startLocationService() {
-            TODO("Not yet implemented")
-        }
-
-        /**
+    /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
      * This is where we can add markers or lines, add listeners or move the camera. In this case,
