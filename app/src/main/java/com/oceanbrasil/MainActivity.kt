@@ -1,24 +1,22 @@
 package com.oceanbrasil
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import com.oceanbrasil.ocean_jornada_android_maio_2023.R
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+                openTreasureHuntActivity()
+            }
 
-        val tvResultado =  findViewById<TextView>(R.id.tvResultado)
-        val btEnviar = findViewById<Button>(R.id.btEnviar)
+            private fun openTreasureHuntActivity() {
+                val treasureHuntIntent = Intent(this, TreasureHuntActivity::class.java)
+                startActivity(treasureHuntIntent)
 
-        btEnviar.setOnClickListener {
-            //tvResultado.text = " Ana Caroline"//
 
-            val editText = findViewById<EditText>(R.id.editTextText)
-            tvResultado.text = editText.text
         }
     }
-}

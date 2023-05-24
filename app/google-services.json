@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "94487481340",
+    "project_id": "ocean-jornada-android-ana",
+    "storage_bucket": "ocean-jornada-android-ana.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94487481340:android:e5dc25c7a06329d31f8079",
+        "android_client_info": {
+          "package_name": "com.oceanbrasil.ocean_jornada_android_maio_2023"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94487481340-69e21sbg9i09n5pb37o0do1t7bc3pav1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0nHsKPc8XTKQ7hnMLE1PtMiPDUObIbtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94487481340-69e21sbg9i09n5pb37o0do1t7bc3pav1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
