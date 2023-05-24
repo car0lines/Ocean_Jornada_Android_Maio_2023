@@ -13,18 +13,18 @@ class HintListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hint_list)
 
-        val hintEntily = HintEntily(1,"Brigadeiro", 10.0, 70.0)
+        val hintEntily = HintEntily(1, "Brigadeiro", 10.0, 70.0)
 
         val appDatabase = AppDatabase.getInstance(this)
-        val hintDao = AppDatabase.hintDao ()
+        val hintDao = appDatabase.hintDao()
 
         //Iniciamos uma Thread Nova
-        Thread{
+        Thread {
             //Executamos operações fora da Main Thread
             hintDao.insert(hintEntily)
             val hintsEntities = hintDao.findAll()
 
-            runOnUiThread{
+            runOnUiThread {
                 //Pegar Referencias da REcyclerView
                 val rvHints = findViewById<RecyclerView>(R.id.rvHints)
 
@@ -34,20 +34,15 @@ class HintListActivity : AppCompatActivity() {
 
                 //Inicializar Adapter (Precisamos criar Adapter)
                 // TODO: Substituir listOf pela chamada
-                // val hintsList = listOf(
-                    Hint(1,"Brigadeiro", 10.0, 10.0),
+                val hintsList = listOf(
+                    Hint(1, "Brigadeiro", 10.0, 10.0),
                     Hint(2, "Trianon Masp", 10.0, 10.0),
-                    Hint(3,"Paraiso", 10.0, 10.0)
+                    Hint(3, "Paraiso", 10.0, 10.0)
                 )
 
                 val adapter = HintsListAdapter(hintsList)
                 rvHints.adapter = adapter
-
-            }
-            }
-
             }
         }.start()
-
-
+    }
 }

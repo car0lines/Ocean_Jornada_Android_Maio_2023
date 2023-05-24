@@ -8,39 +8,38 @@ import androidx.recyclerview.widget.RecyclerView
 import com.oceanbrasil.ocean_jornada_android_maio_2023.R
 
 
-class HintsListAdapter(private val items: List<Hint>) : RecyclerView.Adapter<HintsListAdapter.ViewHolder>() {
-    class ViewHolder
+class HintsListAdapter(private val items: List<Hint>) :
+    RecyclerView.Adapter<HintsListAdapter.ViewHolder>() {
 
-    {
-            class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-                fun bindView(item: Hint) {
-                    val tvHintName = itemView.findViewById<TextView>(R.id.tvHintName)
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bindView(item: Hint) {
+            val tvHintName = itemView.findViewById<TextView>(R.id.tvHintName)
 
-                    tvHintName.text = "Dica ${item.id}: ${item.name}"
-                }
-            }
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            // Criamos a View a partir do XML
-            val itemView = LayoutInflater
-                .from(parent.context)
-                .inflate(R.layout.hint_item, parent, false)
-
-            // Criamos o ViewHolder com a View e retornamos para o onCreateViewHolder
-            return ViewHolder(itemView)
+            tvHintName.text = "Dica ${item.id}: ${item.name}"
         }
-        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    }
 
-                    // Acessamos o dado na lista a partir do `position` que o Android trouxe
-            val items = null
-            val item = items[position]
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        // Criamos a View a partir do XML
+        val itemView = LayoutInflater
+            .from(parent.context)
+            .inflate(R.layout.hint_item, parent, false)
 
-                    // Realizamos o bind, que carregará os dados no ViewHolder, que conhece a View
-                    // Para isso, executamos o `bindView` enviando os dados específicos a serem exibidos
-                    holder.bindView(item)
-                }
+        // Criamos o ViewHolder com a View e retornamos para o onCreateViewHolder
+        return ViewHolder(itemView)
+    }
 
-                override fun getItemCount(): Int {
-                    val items = null
-                    return items.size
-                }
-            }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        // Acessamos o dado na lista a partir do `position` que o Android trouxe
+        val item = items[position]
+
+        // Realizamos o bind, que carregará os dados no ViewHolder, que conhece a View
+        // Para isso, executamos o `bindView` enviando os dados específicos a serem exibidos
+        holder.bindView(item)
+    }
+
+    override fun getItemCount(): Int {
+        return items.size
+    }
+}
